@@ -1,0 +1,44 @@
+{
+  "name": "carga-termica",
+  "version": "1.0.0",
+  "description": "Software profesional para cálculo de cargas térmicas HVAC",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "src/web/carga-termica-frontend"
+  ],
+  "scripts": {
+    "dev": "pnpm -F carga-termica-frontend dev",
+    "build": "pnpm -F carga-termica-frontend build",
+    "lint": "pnpm -F carga-termica-frontend lint",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hvac",
+    "thermal-load"
+  ],
+  "author": "Roberto Romero Diaz",
+  "license": "MIT",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.5.0",
+      "onFail": "download"
+    }
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.0",
+    "@vitejs/plugin-react": "^6.0.2",
+    "tailwindcss": "^4.3.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.14",
+    "vitest": "^4.1.7"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.4.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "react-hook-form": "^7.77.0",
+    "zod": "^4.4.3"
+  }
+}
