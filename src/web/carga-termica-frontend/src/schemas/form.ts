@@ -6,11 +6,31 @@ const NONNEGATIVE_NUMBER = "No puede ser negativo";
 const INTEGER_NUMBER = "Debe ser un número entero";
 
 export const FormSchema = z.object({
-  areaMuros: z
+  // Áreas de muros por orientación (m²)
+  areaMurosNorte: z
+    .number()
+    .positive(POSITIVE_NUMBER),
+  areaMurosSur: z
+    .number()
+    .positive(POSITIVE_NUMBER),
+  areaMurosEste: z
+    .number()
+    .positive(POSITIVE_NUMBER),
+  areaMurosOeste: z
     .number()
     .positive(POSITIVE_NUMBER),
 
-  areaVentanas: z
+  // Áreas de ventanas por orientación (m²)
+  areaVentanasNorte: z
+    .number()
+    .nonnegative(NONNEGATIVE_NUMBER),
+  areaVentanasSur: z
+    .number()
+    .nonnegative(NONNEGATIVE_NUMBER),
+  areaVentanasEste: z
+    .number()
+    .nonnegative(NONNEGATIVE_NUMBER),
+  areaVentanasOeste: z
     .number()
     .nonnegative(NONNEGATIVE_NUMBER),
 

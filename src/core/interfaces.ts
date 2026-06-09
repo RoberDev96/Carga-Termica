@@ -14,20 +14,32 @@ export interface MaterialData {
 }
 
 export interface BuildingConfig {
+  // Identificación
+  nombreProyecto?: string;
+  
+  // Áreas de muros por orientación (m²)
   areaMurosNorte: number;
   areaMurosSur: number;
   areaMurosEste: number;
   areaMurosOeste: number;
+  
+  // Áreas de ventanas por orientación (m²)
   areaVentanasNorte: number;
   areaVentanasSur: number;
   areaVentanasEste: number;
   areaVentanasOeste: number;
-  tipoMaterial: string;
+  
+  // Cargas internas
   numPersonas: number;
   potenciaLuces: number;
   potenciaEquipos: number;
+  
+  // Condiciones
   temperaturaInterior: number;
+  
+  // Materiales (por ahora, un solo tipo para todos los muros)
+  tipoMaterial: string;
+  
+  // Ubicación
   ciudad: string;
-  // orientacion: "N" | "S" | "E" | "O",
-  nombreProyecto?: string | undefined
-} 
+}

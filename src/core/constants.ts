@@ -9,6 +9,8 @@ export const DEFAULT_VALUES = {
   factorSeguridad: 0.2,
   factorSombreado: 0.7,
   factorSombreadoInvierno: 0.3,
-  factorGananciaSolar: 0.7,
-  tempInteriorInvierno: 21
+  factorGananciaSolarMuros: 0.7,
+  factorGananciaSolarVentanas: 0.8,
+  tempInteriorInvierno: 21,
+  factorUVentana: 2.8
 }

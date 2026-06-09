@@ -1,4 +1,4 @@
-import { ClimaData, MaterialData } from "./interfaces";
+import type { ClimaData, MaterialData } from "./interfaces";
 
 
 export const climaDB: Record<string, ClimaData> = {
@@ -86,7 +86,7 @@ export const materialesDB: Record<string, MaterialData> = {
   }
 };
 
-
+// Factores de ganancia solar (W/m²) - ASHRAE valores típicos
 export const gananciaSolarPorOrientacionMuros: Record<string, number> = {
   N: 35,
   S: 150,
@@ -95,8 +95,8 @@ export const gananciaSolarPorOrientacionMuros: Record<string, number> = {
 };
 
 export const gananciaSolarPorOrientacionVentanas: Record<string, number> = {
-  N: 35,
-  S: 150,
-  E: 180,
-  O: 200
+  N: 50,
+  S: 200,
+  E: 220,
+  O: 250
 };

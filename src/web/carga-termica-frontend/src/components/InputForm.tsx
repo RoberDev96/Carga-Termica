@@ -14,8 +14,14 @@ export const InputForm = ({ onSubmit }: InputFormProps) => {
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      areaMuros: 150,
-      areaVentanas: 30,
+      areaMurosNorte: 40,
+      areaMurosSur: 40,
+      areaMurosEste: 35,
+      areaMurosOeste: 35,
+      areaVentanasNorte: 8,
+      areaVentanasSur: 10,
+      areaVentanasEste: 6,
+      areaVentanasOeste: 6,
       numPersonas: 10,
       potenciaLuces: 800,
       potenciaEquipos: 2000,
@@ -46,13 +52,53 @@ export const InputForm = ({ onSubmit }: InputFormProps) => {
         ))}
       </datalist>
 
-      <label className="block text-sm font-semibold text-slate-700">Area de Muros (m2)</label>
-      <input className="w-full rounded-lg border border-slate-200 px-3 py-2 font-mono text-slate-800 transition-all focus:border-sky-500 focus:ring-2 focus:ring-sky-500 focus:outline-none" type="number" {...register("areaMuros", { valueAsNumber: true })} />
-      {errors.areaMuros && <span className='mt-1 flex items-center gap-1 text-sm text-red-600'>⚠️ {errors.areaMuros.message}</span>}
+      {/* Ahora - Muros por orientación */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label className="block text-sm font-semibold text-slate-700">Muros - Norte (m²)</label>
+          <input className="w-full rounded-lg border border-slate-200 px-3 py-2 font-mono text-slate-800 transition-all focus:border-sky-500 focus:ring-2 focus:ring-sky-500 focus:outline-none" type="number" {...register("areaMurosNorte", { valueAsNumber: true })} />
+          {errors.areaMurosNorte && <span className='mt-1 flex items-center gap-1 text-sm text-red-600'>⚠️ {errors.areaMurosNorte.message}</span>}
+        </div>
+        <div>
+          <label className="block text-sm font-semibold text-slate-700">Muros - Sur (m²)</label>
+          <input className="w-full rounded-lg border border-slate-200 px-3 py-2 font-mono text-slate-800 transition-all focus:border-sky-500 focus:ring-2 focus:ring-sky-500 focus:outline-none" type="number" {...register("areaMurosSur", { valueAsNumber: true })} />
+          {errors.areaMurosSur && <span className='mt-1 flex items-center gap-1 text-sm text-red-600'>⚠️ {errors.areaMurosSur.message}</span>}
+        </div>
+        <div>
+          <label className="block text-sm font-semibold text-slate-700">Muros - Este (m²)</label>
+          <input className="w-full rounded-lg border border-slate-200 px-3 py-2 font-mono text-slate-800 transition-all focus:border-sky-500 focus:ring-2 focus:ring-sky-500 focus:outline-none" type="number" {...register("areaMurosEste", { valueAsNumber: true })} />
+          {errors.areaMurosEste && <span className='mt-1 flex items-center gap-1 text-sm text-red-600'>⚠️ {errors.areaMurosEste.message}</span>}
+        </div>
+        <div>
+          <label className="block text-sm font-semibold text-slate-700">Muros - Oeste (m²)</label>
+          <input className="w-full rounded-lg border border-slate-200 px-3 py-2 font-mono text-slate-800 transition-all focus:border-sky-500 focus:ring-2 focus:ring-sky-500 focus:outline-none" type="number" {...register("areaMurosOeste", { valueAsNumber: true })} />
+          {errors.areaMurosOeste && <span className='mt-1 flex items-center gap-1 text-sm text-red-600'>⚠️ {errors.areaMurosOeste.message}</span>}
+        </div>
+      </div>
 
-      <label className="block text-sm font-semibold text-slate-700">Area de Ventanas(m2)</label>
-      <input className="w-full rounded-lg border border-slate-200 px-3 py-2 font-mono text-slate-800 transition-all focus:border-sky-500 focus:ring-2 focus:ring-sky-500 focus:outline-none" type="number" {...register("areaVentanas", { valueAsNumber: true })} />
-      {errors.areaVentanas && <span className='mt-1 flex items-center gap-1 text-sm text-red-600'>⚠️ {errors.areaVentanas.message}</span>}
+      {/* Ventanas por orientación */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+        <div>
+          <label className="block text-sm font-semibold text-slate-700">Ventanas - Norte (m²)</label>
+          <input className="w-full rounded-lg border border-slate-200 px-3 py-2 font-mono text-slate-800 transition-all focus:border-sky-500 focus:ring-2 focus:ring-sky-500 focus:outline-none" type="number" {...register("areaVentanasNorte", { valueAsNumber: true })} />
+          {errors.areaVentanasNorte && <span className='mt-1 flex items-center gap-1 text-sm text-red-600'>⚠️ {errors.areaVentanasNorte.message}</span>}
+        </div>
+        <div>
+          <label className="block text-sm font-semibold text-slate-700">Ventanas - Sur (m²)</label>
+          <input className="w-full rounded-lg border border-slate-200 px-3 py-2 font-mono text-slate-800 transition-all focus:border-sky-500 focus:ring-2 focus:ring-sky-500 focus:outline-none" type="number" {...register("areaVentanasSur", { valueAsNumber: true })} />
+          {errors.areaVentanasSur && <span className='mt-1 flex items-center gap-1 text-sm text-red-600'>⚠️ {errors.areaVentanasSur.message}</span>}
+        </div>
+        <div>
+          <label className="block text-sm font-semibold text-slate-700">Ventanas - Este (m²)</label>
+          <input className="w-full rounded-lg border border-slate-200 px-3 py-2 font-mono text-slate-800 transition-all focus:border-sky-500 focus:ring-2 focus:ring-sky-500 focus:outline-none" type="number" {...register("areaVentanasEste", { valueAsNumber: true })} />
+          {errors.areaVentanasEste && <span className='mt-1 flex items-center gap-1 text-sm text-red-600'>⚠️ {errors.areaVentanasEste.message}</span>}
+        </div>
+        <div>
+          <label className="block text-sm font-semibold text-slate-700">Ventanas - Oeste (m²)</label>
+          <input className="w-full rounded-lg border border-slate-200 px-3 py-2 font-mono text-slate-800 transition-all focus:border-sky-500 focus:ring-2 focus:ring-sky-500 focus:outline-none" type="number" {...register("areaVentanasOeste", { valueAsNumber: true })} />
+          {errors.areaVentanasOeste && <span className='mt-1 flex items-center gap-1 text-sm text-red-600'>⚠️ {errors.areaVentanasOeste.message}</span>}
+        </div>
+      </div>
 
       <label className="block text-sm font-semibold text-slate-700">Numero de Personas</label>
       <input className="w-full rounded-lg border border-slate-200 px-3 py-2 font-mono text-slate-800 transition-all focus:border-sky-500 focus:ring-2 focus:ring-sky-500 focus:outline-none" type="number" {...register("numPersonas", { valueAsNumber: true })} />
