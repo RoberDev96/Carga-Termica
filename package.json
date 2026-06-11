@@ -20,12 +20,7 @@
   "author": "Roberto Romero Diaz",
   "license": "MIT",
   "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "pnpm@9.15.0",
-      "onFail": "download"
-    }
-  },
+     },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.0",
     "@vitejs/plugin-react": "^6.0.2",
